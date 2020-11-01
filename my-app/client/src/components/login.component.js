@@ -1,5 +1,8 @@
+import history from '../history';
 const { Component } = require("react");
 const axios = require('axios') ;
+
+
 
 // import Cadastro from "./components/cadastro.component";
 
@@ -7,12 +10,25 @@ class Login extends Component{
   constructor(props) {
     super(props);
     
-    this.onSubmit = this.onSubmit.bind(this);
+    
+    this.onChangeUser = this.onChangeUser.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+    this.alert = this.alert.bind(this);
+    this.routeChange = this.routeChange.bind(this);
 
     this.state = {
       username: '',
       password: ''
     }
+  }
+
+  routeChange = () =>{ 
+    let path = '/cadastro'; 
+    history.push(path);
+  }
+
+  alert = () => {
+    alert("ooooooooi")
   }
 
   onChangeUser(input) {
@@ -24,13 +40,6 @@ class Login extends Component{
   onChangePassword(input) {
     this.setState({
       password: input.target.value
-    })
-  }
-
-  onSubmit(resp) {
-    this.setState({
-      username: '',
-      password: ''
     })
   }
 
@@ -53,22 +62,28 @@ class Login extends Component{
             className="form"
             placeholder='Nome de Usuário'
             value={this.state.username}
+            onChange={this.onChangeUser}
             />
             <input type="text"
             className="form"
             placeholder='Senha'
             value={this.state.password}
+            onChange={this.onChangePassword}
             />
             <input type='submit' 
             value="Fazer Login" 
             className="btn-log"
             onClick={this.doLogin}
             />
-            <input type='submit'
-            value='Fazer cadastro'
-            className='btn'
-            
-            />
+          
+          <input className="btn" 
+          type="button" 
+          value="Fazer Cadastro"
+          onClick={this.alert}
+          />
+
+          {/* <Link to='/cadastro'/> */}
+
           </div>
         </body>
     );
