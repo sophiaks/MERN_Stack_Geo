@@ -44,7 +44,7 @@ class Login extends Component{
 
   render() {
     return (
-        <body className='login'>
+        <body className='body'>
           <div className="login-container">
             <h3>Login</h3>
             <input type="text"

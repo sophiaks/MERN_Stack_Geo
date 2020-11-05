@@ -11,7 +11,11 @@ export default class Home extends Component {
                     <li>Localização por IP</li>
                     <li>Te fazer feliz</li>
                     <li>Visuais muito bons pq eu só sei fazer front</li>
+                    
                 </ol>
+                <ul>
+                    
+                </ul>
             </div>
         )
     }
