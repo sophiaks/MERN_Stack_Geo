@@ -1,6 +1,18 @@
-body {
+.App {
     background-color: rgb(56, 56, 122);
+    text-align: center;
 }
+
+.container {
+    margin-top: 80px;
+    background-color: rgb(56, 56, 122);
+    width: 1024px;
+    margin: 1024px;
+    padding: 0;
+    min-height: 500px;
+}
+
+
 
 .login-container {
     width: 20rem;
@@ -11,7 +23,8 @@ body {
     align-self: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
     padding: 1rem;
     background-color: white;
 }
@@ -25,7 +38,7 @@ body {
     align-self: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 12rem;
+    margin-top: 10rem;
     padding: 1rem;
     background-color: white;
 }
@@ -62,4 +75,12 @@ body {
 h3 {
     margin-top: 0.3rem;
     color: rgb(157, 157, 250);
+}
+
+body {
+   background-color:  rgb(56, 56, 122);
+}
+
+.body{
+    background-color: rgb(56, 56, 122);
 }

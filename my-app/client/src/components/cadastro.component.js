@@ -1,12 +1,14 @@
-import history from '../history';
-const { Component } = require("react");
+import '../css/App.css';
+import axios from 'axios'
+import React from 'react';
 
-// const axios = require('axios');
-
-class Cadastro extends Component{
+export default class Cadastro extends React.Component{
   constructor(props) {
-    super(props);
+    super(props)
 
+    this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       username: '',
@@ -14,45 +16,60 @@ class Cadastro extends Component{
     }
   }
 
-  routeChange = () =>{ 
-    let path = '/'; 
-    history.push(path);
+  onChangeUsername(e) {
+    this.setState({ username: e.target.value })
+  }
+
+  onChangePassword(e) {
+    this.setState({ password: e.target.value })
+  }
+
+  onSubmit(e) {
+    e.preventDefault()
+
+    const userObject = {
+      username: this.state.username,
+      password: this.state.password};
+
+    axios.post('/api/cadastro', userObject)
+      .then(res => console.log(res.data));
+
+    this.setState({ username: '', password: ''})
   }
 
   render() {
     return (
-        <body>
+        <body className='body'>
           <div className="cadastro-container">
-          <h1>Cadastro</h1>
+          <h3>Cadastro</h3>
           <input type="text"
             className="form"
             placeholder='Login'
-            value={this.state.username}
+            name='username'
+            onChange={this.onChangeUsername}
             />
             <input type="text"
             className="form"
             placeholder='Senha'
-            value={this.state.password}
+            name='password'
+            onChange={this.onChangePassword}
             />
             <input type="text"
             className="form"
-            placeholder='Comfirme a Senha'
-            value={this.state.password}
+            placeholder='Confirme a Senha'
+            name='passwordConf'
             />
             <input type='submit' 
             value="Fazer Cadastro" 
             className="btn-log"
-            onClick={this.doRegister}
+            onClick={this.onSubmit}
             />
             <input type='submit'
-            value='Jã tem cadastro? Fazer login'
+            value='Já tem cadastro? Fazer login'
             className='btn'
-            onClick={this.routeChange}
             />
           </div>
         </body>
     );
   }
 }
-
-export default Cadastro;

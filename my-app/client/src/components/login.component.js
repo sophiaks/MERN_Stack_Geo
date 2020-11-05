@@ -1,8 +1,5 @@
-import history from '../history';
 const { Component } = require("react");
 const axios = require('axios') ;
-
-
 
 // import Cadastro from "./components/cadastro.component";
 
@@ -10,11 +7,9 @@ class Login extends Component{
   constructor(props) {
     super(props);
     
-    
     this.onChangeUser = this.onChangeUser.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
     this.alert = this.alert.bind(this);
-    this.routeChange = this.routeChange.bind(this);
 
     this.state = {
       username: '',
@@ -22,13 +17,8 @@ class Login extends Component{
     }
   }
 
-  routeChange = () =>{ 
-    let path = '/cadastro'; 
-    history.push(path);
-  }
-
   alert = () => {
-    alert("ooooooooi")
+    alert("OI YAMAAAAAAAA")
   }
 
   onChangeUser(input) {
@@ -52,13 +42,12 @@ class Login extends Component{
     })
   }
 
-
   render() {
     return (
-        <body>
+        <body className='login'>
           <div className="login-container">
             <h3>Login</h3>
-          <input type="text"
+            <input type="text"
             className="form"
             placeholder='Nome de Usuário'
             value={this.state.username}
@@ -75,15 +64,11 @@ class Login extends Component{
             className="btn-log"
             onClick={this.doLogin}
             />
-          
-          <input className="btn" 
-          type="button" 
-          value="Fazer Cadastro"
-          onClick={this.alert}
-          />
-
-          {/* <Link to='/cadastro'/> */}
-
+            <input className="btn" 
+            type="button" 
+            value="Fazer Cadastro"
+            onClick={this.alert}
+            />
           </div>
         </body>
     );

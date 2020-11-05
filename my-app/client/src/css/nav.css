@@ -1,0 +1,40 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(142, 4, 255);
+    color: #ffffff;
+    padding: 1rem 1rem 0.5rem 2rem;
+    
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    padding: 0rem 1rem;
+}
+
+nav li :hover {
+    text-emphasis: none;
+    text-decoration: none;
+    color: rgb(48, 65, 99);
+}
+
+nav a {
+    text-decoration: none;
+    padding: 10px 5px;
+    font-size: 15pt;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+nav h1 {
+    color: red;
+    font-style: italic;
+    text-decoration: none;
+    text-emphasis: none;
+}
