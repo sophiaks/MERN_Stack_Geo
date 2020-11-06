@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from './components/login.component';
 import Cadastro from './components/cadastro.component';
 import Home from './components/home.component';
+import Users from './components/users.component';
 import NavBar from './components/Nav';
 
 import '../src/css/nav.css'
@@ -20,6 +21,7 @@ class App extends Component {
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/cadastro" component={Cadastro}/>
                         <Route exact path="/" component={Home}/>
+                        <Route exact path="/users" component={Users}/>
                     </Switch>
                 </div>
             </BrowserRouter>

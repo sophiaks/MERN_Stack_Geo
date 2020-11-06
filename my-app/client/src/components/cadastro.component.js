@@ -31,7 +31,13 @@ export default class Cadastro extends React.Component{
       username: this.state.username,
       password: this.state.password};
 
-    axios.post('/api/cadastro', userObject)
+      const config = {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    };
+
+    axios.post('localhost:5000/api/cadastro', userObject, config)
       .then(res => console.log(res.data));
 
     this.setState({ username: '', password: ''})

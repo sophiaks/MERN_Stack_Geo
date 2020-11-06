@@ -34,7 +34,7 @@ app.post("/api/login", (req, res) => {
 var db = require('./db');
 var Users = db.Mongoose.model('usercollection', db.UserSchema, 'usercollection');
 
-app.get('/users', function(req, res) {
+app.get('/api/users', function(req, res) {
   Users.find({}).lean().exec(
     function (e, docs) {
       res.json({ "userlist": docs });
